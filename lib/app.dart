@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_quill/flutter_quill.dart';
+import 'package:news_app/presentation/home/home_screen.dart';
 import 'package:news_app/presentation/onboarding/intro_page.dart';
+import 'package:news_app/presentation/onboarding/login_page.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key, required this.intro}) : super(key: key);
+  const App({
+    Key? key,
+    required this.intro,
+    required this.loggedin,
+  }) : super(key: key);
   final bool? intro;
+  final bool? loggedin;
 
   @override
   Widget build(BuildContext context) {
@@ -12,40 +18,9 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: intro == null
           ? OnBoardingPage()
-          : const HtmlEditorExample(
-              title: "Add Data",
-            ),
+          : loggedin == null
+              ? const LoginPage()
+              : const HomeScreen(),
     );
-  }
-}
-
-class HtmlEditorExample extends StatefulWidget {
-  const HtmlEditorExample({Key? key, required this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _HtmlEditorExampleState createState() => _HtmlEditorExampleState();
-}
-
-class _HtmlEditorExampleState extends State<HtmlEditorExample> {
-  final QuillController _controller = QuillController.basic();
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(
-      children: [
-        QuillToolbar.basic(controller: _controller),
-        Expanded(
-          child: Container(
-            child: QuillEditor.basic(
-              controller: _controller,
-              readOnly: false, // true for view only mode
-            ),
-          ),
-        )
-      ],
-    ));
   }
 }

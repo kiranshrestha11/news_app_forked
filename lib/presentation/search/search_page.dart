@@ -1,11 +1,9 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:news_app/logic/search_provider.dart';
 
 class SearchPage extends StatefulWidget {
-  SearchPage({Key? key}) : super(key: key);
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
   State<SearchPage> createState() => _SearchPageState();
@@ -60,7 +58,7 @@ class _SearchPageState extends State<SearchPage> {
                     );
             },
             error: (err, s) => Text(err.toString()),
-            loading: () => CircularProgressIndicator(),
+            loading: () => const CircularProgressIndicator(),
           );
         },
       ),

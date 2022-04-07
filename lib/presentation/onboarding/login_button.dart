@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:news_app/data/models/login_model.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({
@@ -12,8 +9,8 @@ class LoginButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 128),
-      decoration: BoxDecoration(color: Colors.white),
-      child: Text(
+      decoration: const BoxDecoration(color: Colors.white),
+      child: const Text(
         'Login',
         style: TextStyle(fontSize: 24.0),
       ),

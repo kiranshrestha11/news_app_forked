@@ -9,6 +9,11 @@ class LoginModel {
     required this.email,
   });
 
+  factory LoginModel.fromJson(Map<String, dynamic> json) {
+    return LoginModel(
+        password: json['password'], name: json['name'], email: json['email']);
+  }
+
   Map<String, dynamic> toJson() => {
         "name": name,
         "email": email,
