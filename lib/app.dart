@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/presentation/home/home_screen.dart';
-import 'package:news_app/presentation/onboarding/intro_page.dart';
-import 'package:news_app/presentation/onboarding/login_page.dart';
+import 'package:news_app/presentation/practice/counter_notifier.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -16,11 +14,12 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: intro == null
-          ? OnBoardingPage()
-          : loggedin == null
-              ? const LoginPage()
-              : const HomeScreen(),
+      home: Practice2(),
+      // home: intro == null
+      //     ? OnBoardingPage()
+      //     : loggedin == null
+      //         ? const LoginPage()
+      //         : const HomeScreen(),
     );
   }
 }
