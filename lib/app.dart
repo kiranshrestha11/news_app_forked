@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/presentation/practice/counter_notifier.dart';
+import 'package:news_app/presentation/todo_page.dart';
 
 class App extends StatelessWidget {
   const App({
@@ -12,14 +12,14 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Practice2(),
+      home: TodoPage(),
       // home: intro == null
       //     ? OnBoardingPage()
       //     : loggedin == null
       //         ? const LoginPage()
-      //         : const HomeScreen(),
+      //         : const TodoPage(),
     );
   }
 }
